@@ -15,13 +15,13 @@ const Header = () => {
           <Link href="/">
             <a className="px-2 hover:underline">Home</a>
           </Link>
-          <Link href="sobre">
+          <Link href="/sobre">
             <a className="px-2 hover:underline">Sobre</a>
           </Link>
-          <Link href="contato">
+          <Link href="/contato">
             <a className="px-2 hover:underline">Contato</a>
           </Link>
-          <Link href="pesquisa">
+          <Link href="/pesquisa">
             <a className="px-2 hover:underline">Pesquisa</a>
           </Link>
       </div>
