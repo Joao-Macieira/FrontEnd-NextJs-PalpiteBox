@@ -2,12 +2,15 @@ import { GoogleSpreadsheet } from 'google-spreadsheet'
 
 import credentials from '../../credentials.json'
 
-const doc = new GoogleSpreadsheet('1mUNXiBnibZXnK8vPs3_Oq7URxrbPcUfn2pjsDzObLrY')
+const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID)
 
 const api = async (request, response) => {
   try {
     // Inicia a conexão com a planilha
-    await doc.useServiceAccountAuth(credentials)
+    await doc.useServiceAccountAuth({
+      client_email: process.env.SHEET_CLIENT_EMAIL,
+      private_key: process.env.SHEET_PRIVATE_KEY
+    });
     await doc.loadInfo()
 
     // Pega os dados de uma tabela específica
